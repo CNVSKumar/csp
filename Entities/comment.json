@@ -1,0 +1,32 @@
+{
+  "name": "Comment",
+  "type": "object",
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "description": "ID of the report this comment belongs to"
+    },
+    "content": {
+      "type": "string",
+      "description": "The comment text"
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": [
+        "positive",
+        "neutral",
+        "concerned",
+        "urgent"
+      ],
+      "description": "Sentiment of the comment"
+    },
+    "parent_comment_id": {
+      "type": "string",
+      "description": "ID of parent comment if this is a reply"
+    }
+  },
+  "required": [
+    "report_id",
+    "content"
+  ]
+}

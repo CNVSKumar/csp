@@ -1,0 +1,87 @@
+{
+  "name": "ProblemReport",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Brief title of the problem"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the problem"
+    },
+    "location": {
+      "type": "string",
+      "description": "Street address or area of the problem"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "roads_potholes",
+        "water_sanitation",
+        "street_lights",
+        "garbage_waste",
+        "parks_recreation",
+        "public_safety",
+        "other"
+      ],
+      "description": "Type of civic problem"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "reported",
+        "under_review",
+        "action_initiated",
+        "resolved"
+      ],
+      "default": "reported",
+      "description": "Current status of the report"
+    },
+    "photo_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs of uploaded photos"
+    },
+    "upvotes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "List of user emails who upvoted this report"
+    },
+    "upvote_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Total number of upvotes"
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": [
+        "positive",
+        "neutral",
+        "concerned",
+        "urgent"
+      ],
+      "description": "Overall sentiment of the report"
+    },
+    "sentiment_score": {
+      "type": "number",
+      "description": "Numerical sentiment score from -1 to 1"
+    },
+    "comment_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of comments on this report"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "location",
+    "category"
+  ]
+}
